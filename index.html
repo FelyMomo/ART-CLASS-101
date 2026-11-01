@@ -17,7 +17,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;700&family=Allison&family=Inria+Serif:wght@400;700&family=Instrument+Serif&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,300;0,400;0,700;1,400&family=Allison&family=Inria+Serif:wght@400;700&family=Instrument+Serif&display=swap" rel="stylesheet">
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -36,9 +36,12 @@
                             gold: '#c59b27'
                         }
                     },
+                    /* UPDATED FONT FAMILIES MAPPING */
                     fontFamily: {
-                        serif: ['Alegreya Sans', 'serif'],
-                        cursive: ['"Allison"', 'cursive'],
+                        script: ['Allison', 'cursive'],          /* Main Headlines */
+                        serif: ['"Instrument Serif"', 'serif'],  /* Subheads */
+                        nav: ['"Inria Serif"', 'serif'],         /* Navigation */
+                        sans: ['"Alegreya Sans"', 'sans-serif']  /* Information / Body */
                     }
                 }
             }
@@ -46,8 +49,14 @@
     </script>
 
     <style>
+        /* Main Headlines Font */
         .font-script {
-            font-family: 'Alex Brush', cursive;
+            font-family: 'Allison', cursive;
+        }
+
+        /* Navigation Font */
+        .font-nav {
+            font-family: 'Inria Serif', serif;
         }
 
         .bg-hero-overlay {
@@ -58,6 +67,7 @@
             box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08);
         }
     </style>
+    
 </head>
 <body class="bg-brand-cream text-gray-800 font-sans antialiased flex flex-col min-h-screen">
 
@@ -79,12 +89,12 @@
 
 </button>
             <!-- Navigation Links -->
-            <nav class="hidden md:flex items-center gap-8 font-serif text-sm tracking-wider uppercase font-medium">
-                <button onclick="navigateTo('home')" class="nav-btn transition-colors hover:text-brand-green" data-page="home">Homepage</button>
-                <button onclick="scrollToSection('about-section')" class="nav-btn transition-colors hover:text-brand-green">About Us</button>
-                <button onclick="navigateTo('courses')" class="nav-btn transition-colors hover:text-brand-green" data-page="courses">Courses</button>
-                <button onclick="scrollToSection('contact-footer')" class="nav-btn transition-colors hover:text-brand-green">Contacts</button>
-            </nav>
+    <nav class="hidden md:flex items-center gap-8 font-nav text-sm tracking-wider uppercase font-medium">
+    <button onclick="navigateTo('home')" class="nav-btn transition-colors hover:text-brand-green" data-page="home">Homepage</button>
+    <button onclick="scrollToSection('about-section')" class="nav-btn transition-colors hover:text-brand-green">About Us</button>
+    <button onclick="navigateTo('courses')" class="nav-btn transition-colors hover:text-brand-green" data-page="courses">Courses</button>
+    <button onclick="scrollToSection('contact-footer')" class="nav-btn transition-colors hover:text-brand-green">Contacts</button>
+</nav>
 
             <!-- Mobile Menu Toggle -->
             <button id="mobile-menu-btn" class="md:hidden text-stone-700 hover:text-brand-green p-2">
@@ -115,7 +125,7 @@
                 <div class="absolute inset-0 bg-hero-overlay"></div>
 
                 <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-white z-10 w-full">
-                    <h1 class="font-script text-7xl sm:text-8xl md:text-9xl text-stone-100 mb-2 leading-none">Online Art Courses</h1>
+                   <h1 class="font-script text-7xl sm:text-8xl md:text-9xl text-stone-100 mb-2 leading-none">Online Art Courses</h1>
                     <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl text-amber-100 font-light mb-6 tracking-wide">In every artwork, we tell stories...</h2>
                     <p class="max-w-xl text-stone-200 text-sm sm:text-base leading-relaxed mb-8 font-light">
                         Discover your creativity with Art Class 101! Explore exciting art courses, learn new techniques, and bring your imagination to life. Every artist has a story to tell, and yours starts here!
@@ -381,7 +391,7 @@
                         <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=800&auto=format&fit=crop" alt="Graphic Design" class="rounded-2xl w-full h-64 object-cover">
                     </div>
                     <div class="w-full md:w-1/2 space-y-4">
-                        <h2 class="font-serif text-3xl font-bold text-brand-dark tracking-wider">GRAPHIC DESIGN</h2>
+                       <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-dark mb-2">GRAPHIC DESIGN</h2>
                         <p class="text-stone-600 leading-relaxed text-sm">
                             Discover the art of visual communication through colors, typography, and creative layouts. Learn how to combine different elements to create eye-catching designs, express ideas, and bring your imagination to life.
                         </p>
@@ -397,7 +407,7 @@
                         <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=800&auto=format&fit=crop" alt="Painting" class="rounded-2xl w-full h-64 object-cover">
                     </div>
                     <div class="w-full md:w-1/2 space-y-4">
-                        <h2 class="font-serif text-3xl font-bold text-brand-dark tracking-wider">PAINTING</h2>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-dark mb-2">PAINTING</h2>
                         <p class="text-stone-600 leading-relaxed text-sm">
                             Explore the beauty of colors and express your creativity through painting. Learn different techniques, experiment with various styles, and transform your ideas and emotions into meaningful works of art.
                         </p>
@@ -413,7 +423,7 @@
                         <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=800&auto=format&fit=crop" alt="Digital Drawing" class="rounded-2xl w-full h-64 object-cover">
                     </div>
                     <div class="w-full md:w-1/2 space-y-4">
-                        <h2 class="font-serif text-3xl font-bold text-brand-dark tracking-wider">DIGITAL DRAWING</h2>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-dark mb-2">DIGITAL DRAWING</h2>
                         <p class="text-stone-600 leading-relaxed text-sm">
                             Bring your imagination to life through digital art! Learn how to use digital tools, develop your drawing skills, and create unique illustrations. Whether you're a beginner or an aspiring artist, discover new ways to express your creativity.
                         </p>
