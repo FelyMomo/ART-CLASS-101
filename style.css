@@ -76,7 +76,7 @@ nav ul li a {
   font-family: 'Inria Serif', serif;
   font-size: 0.95rem;
   font-weight: 700;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
   color: #2c3e2c;
   transition: color 0.3s ease;
   padding-bottom: 4px;
@@ -117,7 +117,7 @@ nav ul li a.active {
 .hero-title {
   /* MAIN HEADLINE: Allison */
   font-family: 'Allison', cursive;
-  font-size: 10rem;
+  font-size: 10px;
   line-height: 0.85;
   margin-bottom: 20px;
   color: #ffffff;
