@@ -1,449 +1,479 @@
 /* ==========================================================================
-   ART CLASS 101 - GLOBAL STYLESHEET (style.css)
-   ========================================================================== */
+   ART CLASS 101 - GLOBAL STYLESHEET (style.css)
+   ========================================================================== */
+
+/* --- Import Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,300;0,400;0,700;1,400&family=Allison&family=Inria+Serif:wght@400;700&family=Instrument+Serif&display=swap');
 
 /* --- Reset & Base Styles --- */
-- {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: 'Alegreya Sans'
-  background-color: #f8f6f0;
-  color: #333333;
-  line-height: 1.6;
+  font-family: 'Alegreya Sans', sans-serif;
+  background-color: #f8f6f0;
+  color: #333333;
+  line-height: 1.6;
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 button {
-  cursor: pointer;
-  border: none;
-  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
 }
 
 /* --- Header & Navigation Bar --- */
 header {
-  background-color: #ffffff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 50px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-weight: 700;
-  font-size: 1.2rem;
-  letter-spacing: 1px;
-  color: #1a2e1a;
-  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  color: #1a2e1a;
+  cursor: pointer;
 }
 
 .logo-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  border: 2px solid #1a2e1a;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #1a2e1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
 }
 
 nav ul {
-  display: flex;
-  list-style: none;
-  gap: 30px;
+  display: flex;
+  list-style: none;
+  gap: 30px;
 }
 
 nav ul li a {
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  color: #2c3e2c;
-  transition: color 0.3s ease;
-  padding-bottom: 4px;
+  /* NAVIGATION: Inria Serif */
+  font-family: 'Inria Serif', serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #2c3e2c;
+  transition: color 0.3s ease;
+  padding-bottom: 4px;
 }
 
 nav ul li a:hover,
 nav ul li a.active {
-  color: #5c7a5c;
-  border-bottom: 2px solid #5c7a5c;
+  color: #5c7a5c;
+  border-bottom: 2px solid #5c7a5c;
 }
 
 /* --- Page Management --- */
 .page {
-  display: none;
+  display: none;
 }
 
 .page.active {
-  display: block;
+  display: block;
 }
 
 /* --- Shared Hero & Header Banners --- */
 .hero-home {
-  position: relative;
-  height: 80vh;
-  min-height: 500px;
-  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), 
-              url('https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  padding: 0 80px;
-  color: #ffffff;
+  position: relative;
+  height: 80vh;
+  min-height: 500px;
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), 
+              url('https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  padding: 0 80px;
+  color: #ffffff;
 }
 
 .hero-content {
-  max-width: 600px;
+  max-width: 600px;
 }
 
 .hero-title {
-  font-family: 'Alex Brush', cursive;
-  font-size: 5.5rem;
-  line-height: 0.9;
-  margin-bottom: 20px;
-  color: #ffffff;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  /* MAIN HEADLINE: Allison */
+  font-family: 'Allison', cursive;
+  font-size: 7rem;
+  line-height: 0.85;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .hero-subtitle {
-  font-size: 1.4rem;
-  margin-bottom: 12px;
-  font-weight: 600;
+  /* SUBHEADS: Instrument Serif */
+  font-family: 'Instrument Serif', serif;
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+  font-weight: 400;
 }
 
 .hero-description {
-  font-family: system-ui, -apple-system, sans-serif;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  margin-bottom: 30px;
-  opacity: 0.95;
+  /* INFORMATION: Alegreya Sans */
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  opacity: 0.95;
 }
 
 .btn-cta {
-  background-color: #ffffff;
-  color: #1a2e1a;
-  padding: 12px 32px;
-  border-radius: 30px;
-  font-weight: 700;
-  font-size: 0.8rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
+  background-color: #ffffff;
+  color: #1a2e1a;
+  padding: 12px 32px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
 }
 
 .btn-cta:hover {
-  background-color: #1a2e1a;
-  color: #ffffff;
-  transform: translateY(-2px);
+  background-color: #1a2e1a;
+  color: #ffffff;
+  transform: translateY(-2px);
 }
 
 /* Course Specific Banners */
 .category-hero {
-  position: relative;
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  text-align: center;
+  position: relative;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-align: center;
 }
 
 .hero-gd {
-  background: linear-gradient(rgba(80, 40, 20, 0.6), rgba(80, 40, 20, 0.6)), 
-              url('https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  background: linear-gradient(rgba(80, 40, 20, 0.6), rgba(80, 40, 20, 0.6)), 
+              url('https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
 }
 
 .hero-painting {
-  background: linear-gradient(rgba(30, 60, 40, 0.6), rgba(30, 60, 40, 0.6)), 
-              url('https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  background: linear-gradient(rgba(30, 60, 40, 0.6), rgba(30, 60, 40, 0.6)), 
+              url('https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
 }
 
 .hero-dd {
-  background: linear-gradient(rgba(40, 50, 60, 0.6), rgba(40, 50, 60, 0.6)), 
-              url('https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  background: linear-gradient(rgba(40, 50, 60, 0.6), rgba(40, 50, 60, 0.6)), 
+              url('https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
 }
 
 .category-hero-title {
-  font-family: 'Alex Brush', cursive;
-  font-size: 6rem;
-  color: #ffffff;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  /* MAIN HEADLINE: Allison */
+  font-family: 'Allison', cursive;
+  font-size: 7.5rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* --- Section Layouts --- */
 .section {
-  padding: 70px 80px;
+  padding: 70px 80px;
 }
 
 .section-dark {
-  background-color: #273827;
-  color: #ffffff;
+  background-color: #273827;
+  color: #ffffff;
 }
 
 .section-header {
-  text-align: center;
-  margin-bottom: 50px;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 .section-title {
-  font-size: 1.8rem;
-  letter-spacing: 1px;
-  margin-bottom: 8px;
+  /* SUBHEADS: Instrument Serif */
+  font-family: 'Instrument Serif', serif;
+  font-size: 2.8rem;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
 }
 
 .section-subtitle {
-  font-family: system-ui, -apple-system, sans-serif;
-  font-size: 0.95rem;
-  color: #666666;
+  /* INFORMATION: Alegreya Sans */
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 0.95rem;
+  color: #666666;
 }
 
 .section-dark .section-subtitle {
-  color: #cccccc;
+  color: #cccccc;
 }
 
 /* --- Card Grids & Video Cards --- */
 .grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
 }
 
 .course-card {
-  background-color: #ffffff;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  display: flex;
-  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
 }
 
 .course-img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
 .course-content {
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .author {
-  font-family: system-ui, -apple-system, sans-serif;
-  font-size: 0.8rem;
-  color: #777777;
-  margin-bottom: 8px;
+  /* INFORMATION: Alegreya Sans */
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 0.8rem;
+  color: #777777;
+  margin-bottom: 8px;
 }
 
 .course-card-title {
-  font-family: system-ui, -apple-system, sans-serif;
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #222222;
-  margin-bottom: 16px;
-  line-height: 1.3;
+  /* INFORMATION: Alegreya Sans */
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #222222;
+  margin-bottom: 16px;
+  line-height: 1.3;
 }
 
 .course-meta {
-  display: flex;
-  gap: 20px;
-  font-family: system-ui, -apple-system, sans-serif;
-  font-size: 0.8rem;
-  color: #666666;
-  margin-bottom: 24px;
-  margin-top: auto;
+  display: flex;
+  gap: 20px;
+  /* INFORMATION: Alegreya Sans */
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 0.8rem;
+  color: #666666;
+  margin-bottom: 24px;
+  margin-top: auto;
 }
 
 .meta-item {
-  display: flex;
-  align-items: center;
-  gap: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .btn-view-more {
-  align-self: flex-end;
-  background: none;
-  font-family: system-ui, -apple-system, sans-serif;
-  font-weight: 700;
-  font-size: 0.75rem;
-  letter-spacing: 1px;
-  color: #444444;
-  text-transform: uppercase;
+  align-self: flex-end;
+  background: none;
+  /* INFORMATION: Alegreya Sans */
+  font-family: 'Alegreya Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  color: #444444;
+  text-transform: uppercase;
 }
 
 .btn-view-more:hover {
-  color: #273827;
+  color: #273827;
 }
 
 /* --- Stats Bar --- */
 .stats-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  text-align: center;
 }
 
 .stat-number {
-  font-size: 2.8rem;
-  font-weight: 700;
-  margin-bottom: 5px;
+  /* SUBHEADS: Instrument Serif */
+  font-family: 'Instrument Serif', serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 5px;
 }
 
 .stat-label {
-  font-family: system-ui, -apple-system, sans-serif;
-  font-size: 0.85rem;
-  color: #974315;
+  /* INFORMATION: Alegreya Sans */
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 0.85rem;
+  color: #dfb185;
 }
 
 /* --- Feedback / Testimonials --- */
 .feedback-card {
-  background-color: #ffffff;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  position: relative;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  position: relative;
 }
 
 .quote-mark {
-  font-size: 3rem;
-  line-height: 1;
-  color: #a5b8a5;
-  font-family: Georgia, serif;
+  font-size: 3rem;
+  line-height: 1;
+  color: #a5b8a5;
+  font-family: Georgia, serif;
 }
 
 .feedback-text {
-  font-family: system-ui, -apple-system, sans-serif;
-  font-size: 0.85rem;
-  color: #555555;
-  line-height: 1.6;
-  margin: 15px 0 20px 0;
+  /* INFORMATION: Alegreya Sans */
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 0.85rem;
+  color: #555555;
+  line-height: 1.6;
+  margin: 15px 0 20px 0;
 }
 
 .feedback-author {
-  font-family: system-ui, -apple-system, sans-serif;
-  font-weight: 700;
-  font-size: 0.9rem;
-  color: #222222;
+  /* INFORMATION: Alegreya Sans */
+  font-family: 'Alegreya Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #222222;
 }
 
 /* --- Overview Cards (Courses Page) --- */
 .overview-card {
-  background: #ffffff;
-  padding: 50px;
-  border-radius: 16px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
-  text-align: center;
+  background: #ffffff;
+  padding: 50px;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+  text-align: center;
 }
 
 .overview-title {
-  font-size: 2.2rem;
-  letter-spacing: 2px;
-  margin-bottom: 20px;
+  /* SUBHEADS: Instrument Serif */
+  font-family: 'Instrument Serif', serif;
+  font-size: 2.8rem;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
 }
 
 .overview-desc {
-  font-family: system-ui, -apple-system, sans-serif;
-  font-size: 0.95rem;
-  color: #555555;
-  max-width: 800px;
-  margin: 0 auto 30px auto;
-  line-height: 1.7;
+  /* INFORMATION: Alegreya Sans */
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 0.95rem;
+  color: #555555;
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+  line-height: 1.7;
 }
 
 /* --- Call To Action Box --- */
 .cta-box {
-  background-color: #273827;
-  color: #ffffff;
-  padding: 50px;
-  border-radius: 16px;
-  text-align: center;
-  margin-top: 40px;
+  background-color: #273827;
+  color: #ffffff;
+  padding: 50px;
+  border-radius: 16px;
+  text-align: center;
+  margin-top: 40px;
 }
 
 .cta-box h3 {
-  font-size: 1.4rem;
-  margin-bottom: 12px;
+  /* SUBHEADS: Instrument Serif */
+  font-family: 'Instrument Serif', serif;
+  font-size: 2rem;
+  margin-bottom: 12px;
 }
 
 .cta-box p {
-  font-family: system-ui, -apple-system, sans-serif;
-  font-size: 0.9rem;
-  color: #dddddd;
-  margin-bottom: 25px;
+  /* INFORMATION: Alegreya Sans */
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 0.9rem;
+  color: #dddddd;
+  margin-bottom: 25px;
 }
 
 /* --- Footer --- */
 footer {
-  background-color: #1a271a;
-  color: #ffffff;
-  padding: 60px 80px 30px 80px;
-  font-family: system-ui, -apple-system, sans-serif;
-  font-size: 0.85rem;
+  background-color: #1a271a;
+  color: #ffffff;
+  padding: 60px 80px 30px 80px;
+  /* INFORMATION: Alegreya Sans */
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 0.85rem;
 }
 
 .footer-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1.5fr;
-  gap: 40px;
-  margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 40px;
+  margin-bottom: 40px;
 }
 
 .footer-col h4 {
-  font-family: 'Cinzel', serif;
-  font-size: 0.95rem;
-  letter-spacing: 1px;
-  margin-bottom: 20px;
-  color: #ffffff;
+  /* SUBHEADS: Instrument Serif */
+  font-family: 'Instrument Serif', serif;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  color: #ffffff;
 }
 
 .footer-col p {
-  color: #bbbbbb;
-  line-height: 1.6;
-  margin-bottom: 15px;
+  color: #bbbbbb;
+  line-height: 1.6;
+  margin-bottom: 15px;
 }
 
 .footer-links {
-  list-style: none;
+  list-style: none;
 }
 
 .footer-links li {
-  margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .footer-links a {
-  color: #bbbbbb;
-  transition: color 0.3s ease;
+  color: #bbbbbb;
+  transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
-  color: #ffffff;
+  color: #ffffff;
 }
 
 .contact-info {
-  color: #bbbbbb;
-  line-height: 1.8;
+  color: #bbbbbb;
+  line-height: 1.8;
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 20px;
-  display: flex;
-  justify-content: space-between;
-  color: #888888;
-  font-size: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  color: #888888;
+  font-size: 0.75rem;
 }
