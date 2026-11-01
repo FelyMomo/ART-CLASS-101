@@ -704,6 +704,49 @@
                     </button>
                 </div>
             </div>
+
+        <!-- ================= PAGE 6: SIGN UP / REGISTRATION (WITH CONFETTI) ================= -->
+        <section id="page-signup" class="page-view hidden py-16">
+            <div class="max-w-md mx-auto px-4">
+                <div class="card bg-white p-8 sm:p-10 rounded-3xl card-shadow border border-stone-100">
+                    
+                    <!-- Form State -->
+                    <div id="form-container">
+                        <div class="text-center mb-8">
+                            <h2 class="font-serif text-3xl font-bold text-brand-dark mb-2">Join Art Class 101</h2>
+                            <p class="text-stone-500 text-sm">Create your student account to unlock creative masterclasses.</p>
+                        </div>
+                        
+                        <form id="signup-form" class="space-y-4">
+                            <div class="input-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" placeholder="John Doe" required>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" placeholder="john@example.com" required>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="password">Password</label>
+                                <input type="password" id="password" placeholder="••••••••" required>
+                            </div>
+
+                            <button type="submit" class="submit-btn mt-6">Complete Sign Up</button>
+                        </form>
+                    </div>
+
+                    <!-- Success State (Hidden initially) -->
+                    <div id="success-container" class="hidden text-center py-6">
+                        <div class="success-icon text-5xl mb-4">🎉</div>
+                        <h2 class="font-serif text-2xl font-bold text-brand-dark mb-2">Welcome Aboard!</h2>
+                        <p class="text-stone-600 text-sm mb-6">Your Art Class 101 account has been successfully created. Let your creativity begin!</p>
+                        <button onclick="navigateTo('home'); resetForm();" class="submit-btn secondary-btn">Back to Homepage</button>
+                    </div>
+
+                </div>
+            </div>
         </section>
 
     </main>
@@ -809,6 +852,82 @@
 
     <!-- JAVASCRIPT: SPA ROUTING & CONTROLS -->
     <script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <!-- 2. SPA Navigation & Confetti Logic -->
+    <script>
+        function navigateTo(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page-view').forEach(page => {
+                page.classList.add('hidden');
+            });
+            
+            // Show target page
+            const targetPage = document.getElementById('page-' + pageId);
+            if (targetPage) {
+                targetPage.classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function scrollToSection(sectionId) {
+            navigateTo('home');
+            setTimeout(() => {
+                const el = document.getElementById(sectionId);
+                if (el) {
+                    el.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 100);
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function resetForm() {
+            document.getElementById('signup-form').reset();
+            document.getElementById('form-container').classList.remove('hidden');
+            document.getElementById('success-container').classList.add('hidden');
+        }
+
+        // Handle Signup form submission & Trigger Confetti
+        const signupForm = document.getElementById('signup-form');
+        if (signupForm) {
+            signupForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // Hide input form and show success state
+                document.getElementById('form-container').classList.add('hidden');
+                document.getElementById('success-container').classList.remove('hidden');
+
+                // Trigger Canvas Confetti celebration
+                triggerConfetti();
+            });
+        }
+
+        function triggerConfetti() {
+            confetti({
+                particleCount: 120,
+                spread: 80,
+                origin: { y: 0.6 }
+            });
+
+            setTimeout(() => {
+                confetti({
+                    particleCount: 60,
+                    angle: 60,
+                    spread: 55,
+                    origin: { x: 0 }
+                });
+                confetti({
+                    particleCount: 60,
+                    angle: 120,
+                    spread: 55,
+                    origin: { x: 1 }
+                });
+            }, 300);
+        }
         // Page Navigation Controller
         function navigateTo(pageId) {
             // Hide all pages
