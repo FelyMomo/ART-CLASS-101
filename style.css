@@ -117,7 +117,7 @@ nav ul li a.active {
 .hero-title {
   /* MAIN HEADLINE: Allison */
   font-family: 'Allison', cursive;
-  font-size: 7rem;
+  font-size: 10rem;
   line-height: 0.85;
   margin-bottom: 20px;
   color: #ffffff;
@@ -188,7 +188,7 @@ nav ul li a.active {
 .category-hero-title {
   /* MAIN HEADLINE: Allison */
   font-family: 'Allison', cursive;
-  font-size: 7.5rem;
+  font-size: 10rem;
   color: #ffffff;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
