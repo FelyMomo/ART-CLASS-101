@@ -22,6 +22,9 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- Custom Global Stylesheet (Added to fix missing styles) -->
+    <link rel="stylesheet" href="style.css">
+
    <script>
         tailwind.config = {
             theme: {
@@ -74,26 +77,22 @@
     <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-stone-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <!-- Logo -->
-            <!-- Logo -->
-<button onclick="navigateTo('home')" class="flex items-center gap-3 group text-left">
-
-   <img src="./favicon-32x32.png"
-     alt="Art Class 101 Logo"
-     class="w-10 h-10 object-contain">
-
-    <div>
-        <span class="font-serif font-bold text-lg tracking-wider text-brand-dark block">ART CLASS 101</span>
-        <span class="text-[10px] tracking-widest text-stone-500 uppercase block">Creative Academy</span>
-    </div>
-
-</button>
+            <button onclick="navigateTo('home')" class="flex items-center gap-3 group text-left">
+               <img src="./favicon-32x32.png"
+                 alt="Art Class 101 Logo"
+                 class="w-10 h-10 object-contain">
+                <div>
+                    <span class="font-serif font-bold text-lg tracking-wider text-brand-dark block">ART CLASS 101</span>
+                    <span class="text-[10px] tracking-widest text-stone-500 uppercase block">Creative Academy</span>
+                </div>
+            </button>
             <!-- Navigation Links -->
-    <nav class="hidden md:flex items-center gap-8 font-nav text-sm tracking-wider uppercase font-medium">
-    <button onclick="navigateTo('home')" class="nav-btn transition-colors hover:text-brand-green" data-page="home">Homepage</button>
-    <button onclick="scrollToSection('about-section')" class="nav-btn transition-colors hover:text-brand-green">About Us</button>
-    <button onclick="navigateTo('courses')" class="nav-btn transition-colors hover:text-brand-green" data-page="courses">Courses</button>
-    <button onclick="scrollToSection('contact-footer')" class="nav-btn transition-colors hover:text-brand-green">Contacts</button>
-</nav>
+            <nav class="hidden md:flex items-center gap-8 font-nav text-sm tracking-wider uppercase font-medium">
+                <button onclick="navigateTo('home')" class="nav-btn transition-colors hover:text-brand-green" data-page="home">Homepage</button>
+                <button onclick="scrollToSection('about-section')" class="nav-btn transition-colors hover:text-brand-green">About Us</button>
+                <button onclick="navigateTo('courses')" class="nav-btn transition-colors hover:text-brand-green" data-page="courses">Courses</button>
+                <button onclick="scrollToSection('contact-footer')" class="nav-btn transition-colors hover:text-brand-green">Contacts</button>
+            </nav>
 
             <!-- Mobile Menu Toggle -->
             <button id="mobile-menu-btn" class="md:hidden text-stone-700 hover:text-brand-green p-2">
@@ -716,11 +715,11 @@
                 
                 <!-- Col 1: Brand Info -->
                 <div class="flex items-center gap-3">
-    <div class="w-9 h-9 rounded-full border border-amber-200/40 flex items-center justify-center overflow-hidden">
-    <img src="./favicon-32x32.png" alt="Art Class 101 Logo" class="w-full h-full object-contain">
-</div>
-    <span class="font-serif font-bold text-white text-base tracking-wider">ART CLASS 101</span>
-</div>
+                    <div class="w-9 h-9 rounded-full border border-amber-200/40 flex items-center justify-center overflow-hidden">
+                        <img src="./favicon-32x32.png" alt="Art Class 101 Logo" class="w-full h-full object-contain">
+                    </div>
+                    <span class="font-serif font-bold text-white text-base tracking-wider">ART CLASS 101</span>
+                </div>
 
                 <!-- Col 2: Navigation Links -->
                 <div>
@@ -760,22 +759,23 @@
                         </li>
                     </ul>
                     
-                <div class="flex items-center gap-4 mt-6">
-                    <!-- Facebook -->
-                    <a href="YOUR_FACEBOOK_LINK"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="w-8 h-8 rounded-full bg-stone-800 hover:bg-brand-green text-stone-300 hover:text-white flex items-center justify-center transition-colors">
-                     <i class="fa-brands fa-facebook-f text-xs"></i>
-               </a
-                   <!-- Instagram -->
-                    <a href="YOUR_INSTAGRAM_LINK
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="w-8 h-8 rounded-full bg-stone-800 hover:bg-brand-green text-stone-300 hover:text-white flex items-center justify-center transition-colors">
-                        <i class="fa-brands fa-instagram text-xs"></i>
-                    </a>
-                </div>
+                    <div class="flex items-center gap-4 mt-6">
+                        <!-- Facebook (Fixed syntax) -->
+                        <a href="YOUR_FACEBOOK_LINK"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="w-8 h-8 rounded-full bg-stone-800 hover:bg-brand-green text-stone-300 hover:text-white flex items-center justify-center transition-colors">
+                            <i class="fa-brands fa-facebook-f text-xs"></i>
+                        </a>
+                        
+                        <!-- Instagram (Fixed syntax) -->
+                        <a href="YOUR_INSTAGRAM_LINK"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="w-8 h-8 rounded-full bg-stone-800 hover:bg-brand-green text-stone-300 hover:text-white flex items-center justify-center transition-colors">
+                            <i class="fa-brands fa-instagram text-xs"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="border-t border-stone-800 pt-6 text-center text-stone-500 text-xs">
@@ -783,6 +783,7 @@
             </div>
         </div>
     </footer>
+
     <!-- INTERACTIVE MODAL DIALOG (For details/Sign-Up preview) -->
     <div id="custom-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
         <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 card-shadow space-y-4 relative">
