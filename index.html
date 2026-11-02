@@ -268,28 +268,29 @@
                     <div class="text-center mb-12">
                         <h3 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-2">Website Statistics</h3>
                         <p class="text-stone-300 font-light text-xs sm:text-sm mb-10">Check out our active users, total courses, instructors, and satisfaction rate</p>
-                    </div>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                        <div class="p-4 border border-stone-100 rounded-xl bg-white text-center">
-                            <span class="font-serif text-4xl sm:text-5xl font-bold block mb-1" style="color: rgb (151, 67, 21);">100+</span>
-                            <span class="text-xs sm:text-sm uppercase tracking-wider font-medium" style="color: rgb (151, 67, 21);">Active Students</span>
-                        </div>
-                        <div class="p-4 border border-stone-100 rounded-xl bg-white text-center">
-                            <span class="font-serif text-4xl sm:text-5xl font-bold block mb-1" style="color: rgb (151, 67, 21);">25</span>
-                            <span class="text-xs sm:text-sm uppercase tracking-wider font-medium" style="color: rgb (151, 67, 21);">Total Courses</span>
-                        </div>
-                        <div class="p-4 border border-stone-100 rounded-xl bg-white text-center">
-                            <span class="font-serif text-4xl sm:text-5xl font-bold block mb-1" style="color: rgb (151, 67, 21);">3</span>
-                            <span class="text-xs sm:text-sm uppercase tracking-wider font-medium" style="color: rgb (151, 67, 21);">Instructors</span>
-                        </div>
-                        <div class="p-4 border border-stone-100 rounded-xl bg-white text-center">
-                            <span class="font-serif text-4xl sm:text-5xl font-bold block mb-1" style="color: rgb (151, 67, 21);">97%</span>
-                            <span class="text-xs sm:text-sm uppercase tracking-wider font-medium" style="color: rgb (151, 67, 21);">Satisfaction Rate</span>
+                        
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                            <div class="p-4 border border-stone-700/50 rounded-xl bg-white/5">
+                                <span class="font-serif text-4xl sm:text-5xl font-bold text-amber-200 block mb-1">100+</span>
+                                <span class="text-xs sm:text-sm text-stone-300 uppercase tracking-wider font-medium">Active Students</span>
+                            </div>
+                            <div class="p-4 border border-stone-700/50 rounded-xl bg-white/5">
+                                <span class="font-serif text-4xl sm:text-5xl font-bold text-amber-200 block mb-1">25</span>
+                                <span class="text-xs sm:text-sm text-stone-300 uppercase tracking-wider font-medium">Total Courses</span>
+                            </div>
+                            
+                            <div class="p-4 border border-stone-700/50 rounded-xl bg-white/5">
+                                <span class="font-serif text-4xl sm:text-5xl font-bold text-amber-200 block mb-1">3</span>
+                                <span class="text-xs sm:text-sm text-stone-300 uppercase tracking-wider font-medium">Instructors</span>
+                            </div>
+                            <div class="p-4 border border-stone-700/50 rounded-xl bg-white/5">
+                                <span class="font-serif text-4xl sm:text-5xl font-bold text-amber-200 block mb-1">97%</span>
+                                <span class="text-xs sm:text-sm text-stone-300 uppercase tracking-wider font-medium">Satisfaction Rate</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>              
+            </div> 
             <!-- Student Feedback Section -->
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12">
@@ -808,77 +809,113 @@
 
     <!-- JAVASCRIPT: SPA ROUTING & CONTROLS -->
     <script>
-        // Page Navigation Controller
-        functionnavigateTo(pageId) {
-            // Hide all pages
-            constpages = document.querySelectorAll('.page-view');
-            pages.forEach(page => page.classList.add('hidden'));
+    // Page Navigation Controller
+    function navigateTo(pageId) {
+        // Hide all pages
+        const pages = document.querySelectorAll('.page-view');
+        pages.forEach(page => page.classList.add('hidden'));
 
-            // Show selected page
-            consttargetPage = document.getElementById(`page-${pageId}`);
-            if(targetPage) {
-                targetPage.classList.remove('hidden');
-            }
-
-            // Scroll to top
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-
-            // Update active header button highlight
-            document.querySelectorAll('.nav-btn').forEach(btn => {
-                if (btn.getAttribute('data-page') === pageId) {
-                    btn.classList.add('text-brand-green', 'font-bold');
-                } else {
-                    btn.classList.remove('text-brand-green', 'font-bold');
-                }
-            });
+        // Show selected page
+        const targetPage = document.getElementById(`page-${pageId}`);
+        if (targetPage) {
+            targetPage.classList.remove('hidden');
         }
 
-        // Smooth Scroll to Section
-        functionscrollToSection(sectionId) {
-            constcurrentHome = document.getElementById('page-home');
-            if (currentHome.classList.contains('hidden')) {
-                navigateTo('home');
-                setTimeout(() => {
-                    constelem = document.getElementById(sectionId);
-                    if (elem) elem.scrollIntoView({ behavior: 'smooth' });
-                }, 100);
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        // Update active header button highlight
+        document.querySelectorAll('.nav-btn').forEach(btn => {
+            if (btn.getAttribute('data-page') === pageId) {
+                btn.classList.add('text-brand-green', 'font-bold');
             } else {
-                constelem = document.getElementById(sectionId);
-                if (elem) elem.scrollIntoView({ behavior: 'smooth' });
+                btn.classList.remove('text-brand-green', 'font-bold');
+            }
+        });
+    }
+
+
+    // Smooth Scroll to Section
+    function scrollToSection(sectionId) {
+        const currentHome = document.getElementById('page-home');
+
+        if (!currentHome) return;
+
+        if (currentHome.classList.contains('hidden')) {
+            navigateTo('home');
+
+            setTimeout(() => {
+                const elem = document.getElementById(sectionId);
+                if (elem) {
+                    elem.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 100);
+
+        } else {
+            const elem = document.getElementById(sectionId);
+            if (elem) {
+                elem.scrollIntoView({ behavior: 'smooth' });
             }
         }
+    }
 
-        // Mobile Menu Toggle
-        constmobileBtn = document.getElementById('mobile-menu-btn');
-        constmobileMenu = document.getElementById('mobile-menu');
 
-        mobileBtn.addEventListener('click', toggleMobileMenu);
+    // Mobile Menu Toggle
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
 
-        functiontoggleMobileMenu() {
+    function toggleMobileMenu() {
+        if (mobileMenu) {
             mobileMenu.classList.toggle('hidden');
         }
+    }
 
-        // Modal Handlers
-        functionopenModal(title) {
-            document.getElementById('modal-title').innerText = title;
-            document.getElementById('modal-desc').innerText = `Start watching "${title}" with Art Class 101. Join over 100+ active students today!`;
-            document.getElementById('custom-modal').classList.remove('hidden');
+    if (mobileBtn) {
+        mobileBtn.addEventListener('click', toggleMobileMenu);
+    }
+
+
+    // Modal Handlers
+    function openModal(title) {
+        const modalTitle = document.getElementById('modal-title');
+        const modalDesc = document.getElementById('modal-desc');
+        const customModal = document.getElementById('custom-modal');
+
+        if (modalTitle) modalTitle.innerText = title;
+
+        if (modalDesc) {
+            modalDesc.innerText = `Start watching "${title}" with Art Class 101. Join over 100+ active students today!`;
         }
 
-        functioncloseModal() {
-            document.getElementById('custom-modal').classList.add('hidden');
+        if (customModal) {
+            customModal.classList.remove('hidden');
         }
+    }
 
-        functionhandleModalSubmit(e) {
-            e.preventDefault();
-            alert('Thank you! You have successfully registered interest for this course video module.');
-            closeModal();
+
+    function closeModal() {
+        const customModal = document.getElementById('custom-modal');
+
+        if (customModal) {
+            customModal.classList.add('hidden');
         }
+    }
 
-        // Initial setup
-        window.onload = function () {
-            navigateTo('home');
-        };
-    </script>
+
+    function handleModalSubmit(e) {
+        e.preventDefault();
+
+        alert('Thank you! You have successfully registered interest for this course video module.');
+
+        closeModal();
+    }
+
+
+    // Initial Setup
+    window.onload = function () {
+        navigateTo('home');
+    };
+
+</script>
 </body>
 </html>
