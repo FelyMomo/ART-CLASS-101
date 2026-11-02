@@ -62,11 +62,11 @@
         }
 
         .bg-hero-overlay {
-            background: linear-gradient(to right, rgba(0,0,0,0.55), rgba(0,0,0,0.25));
+            background: linear-gradient (toright, rgba (0,0,0,0.55), rgba (0,0,0,0.25));
         }
 
         .card-shadow {
-            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 10 px 30 px -5 px rgba (0, 0, 0, 0.08);
         }
     </style>
     
@@ -275,16 +275,16 @@
                             <span class="text-xs sm:text-sm uppercase tracking-wider font-medium" style="color: rgb (151, 67, 21);">Active Students</span>
                         </div>
                         <div class="p-4 border border-white/30 rounded-xl bg-white text-center">
-                            <span class="font-serif text-4xl sm:text-5xl font-bold block mb-1" style="color: rgb(151, 67, 21);">25</span>
-                            <span class="text-xs sm:text-sm uppercase tracking-wider font-medium" style="color: rgb(151, 67, 21);">Total Courses</span>
+                            <span class="font-serif text-4xl sm:text-5xl font-bold block mb-1" style="color: rgb (151, 67, 21);">25</span>
+                            <span class="text-xs sm:text-sm uppercase tracking-wider font-medium" style="color: rgb (151, 67, 21);">Total Courses</span>
                         </div>
                         <div class="p-4 border border-white/30 rounded-xl bg-white text-center">
-                            <span class="font-serif text-4xl sm:text-5xl font-bold block mb-1" style="color: rgb(151, 67, 21);">3</span>
-                            <span class="text-xs sm:text-sm uppercase tracking-wider font-medium" style="color: rgb(151, 67, 21);">Instructors</span>
+                            <span class="font-serif text-4xl sm:text-5xl font-bold block mb-1" style="color: rgb (151, 67, 21);">3</span>
+                            <span class="text-xs sm:text-sm uppercase tracking-wider font-medium" style="color: rgb (151, 67, 21);">Instructors</span>
                         </div>
                         <div class="p-4 border border-white/30 rounded-xl bg-white text-center">
-                            <span class="font-serif text-4xl sm:text-5xl font-bold block mb-1" style="color: rgb(151, 67, 21);">97%</span>
-                            <span class="text-xs sm:text-sm uppercase tracking-wider font-medium" style="color: rgb(151, 67, 21);">Satisfaction Rate</span>
+                            <span class="font-serif text-4xl sm:text-5xl font-bold block mb-1" style="color: rgb (151, 67, 21);">97%</span>
+                            <span class="text-xs sm:text-sm uppercase tracking-wider font-medium" style="color: rgb (151, 67, 21);">Satisfaction Rate</span>
                         </div>
                     </div>
                 </div>
@@ -808,14 +808,14 @@
     <!-- JAVASCRIPT: SPA ROUTING & CONTROLS -->
     <script>
         // Page Navigation Controller
-        function navigateTo(pageId) {
+        functionnavigateTo(pageId) {
             // Hide all pages
-            const pages = document.querySelectorAll('.page-view');
+            constpages = document.querySelectorAll('.page-view');
             pages.forEach(page => page.classList.add('hidden'));
 
             // Show selected page
-            const targetPage = document.getElementById(`page-${pageId}`);
-            if (targetPage) {
+            consttargetPage = document.getElementById(`page-${pageId}`);
+            if(targetPage) {
                 targetPage.classList.remove('hidden');
             }
 
@@ -833,49 +833,49 @@
         }
 
         // Smooth Scroll to Section
-        function scrollToSection(sectionId) {
-            const currentHome = document.getElementById('page-home');
+        functionscrollToSection(sectionId) {
+            constcurrentHome = document.getElementById('page-home');
             if (currentHome.classList.contains('hidden')) {
                 navigateTo('home');
                 setTimeout(() => {
-                    const elem = document.getElementById(sectionId);
+                    constelem = document.getElementById(sectionId);
                     if (elem) elem.scrollIntoView({ behavior: 'smooth' });
                 }, 100);
             } else {
-                const elem = document.getElementById(sectionId);
+                constelem = document.getElementById(sectionId);
                 if (elem) elem.scrollIntoView({ behavior: 'smooth' });
             }
         }
 
         // Mobile Menu Toggle
-        const mobileBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
+        constmobileBtn = document.getElementById('mobile-menu-btn');
+        constmobileMenu = document.getElementById('mobile-menu');
 
         mobileBtn.addEventListener('click', toggleMobileMenu);
 
-        function toggleMobileMenu() {
+        functiontoggleMobileMenu() {
             mobileMenu.classList.toggle('hidden');
         }
 
         // Modal Handlers
-        function openModal(title) {
+        functionopenModal(title) {
             document.getElementById('modal-title').innerText = title;
             document.getElementById('modal-desc').innerText = `Start watching "${title}" with Art Class 101. Join over 100+ active students today!`;
             document.getElementById('custom-modal').classList.remove('hidden');
         }
 
-        function closeModal() {
+        functioncloseModal() {
             document.getElementById('custom-modal').classList.add('hidden');
         }
 
-        function handleModalSubmit(e) {
+        functionhandleModalSubmit(e) {
             e.preventDefault();
             alert('Thank you! You have successfully registered interest for this course video module.');
             closeModal();
         }
 
         // Initial setup
-        window.onload = function() {
+        window.onload = function () {
             navigateTo('home');
         };
     </script>
