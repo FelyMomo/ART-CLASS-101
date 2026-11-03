@@ -924,3 +924,41 @@ footer a,
         gap: 12px 20px;
     }
 }
+/* =========================================
+   FIX LOGO AND NAVIGATION SPACING
+   ========================================= */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    gap: 60px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+    margin-right: auto;
+    white-space: nowrap;
+}
+
+nav {
+    flex-shrink: 0;
+    margin-left: 40px;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    white-space: nowrap;
+}
+
+/* Prevent logo text from being squeezed */
+.logo span {
+    white-space: nowrap;
+    display: inline-block;
+}
