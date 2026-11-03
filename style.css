@@ -1,4 +1,3 @@
-
 /* ==========================================================================
    ART CLASS 101 - GLOBAL STYLESHEET (style.css)
    ========================================================================== */
@@ -621,344 +620,247 @@ footer {
         gap: 10px;
     }
 }
-/* =========================================
-   HEADER AND NAVIGATION FIX
-   ========================================= */
 
+/* =====================================================
+   ART CLASS 101 - FINAL HEADER, LOGO & TITLE FIX
+   ===================================================== */
+
+/* HEADER */
 header {
     width: 100%;
-    min-height: 75px;
+    min-height: 85px;
+    padding: 15px 40px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 15px 50px;
-    gap: 40px;
+    justify-content: space-between;
+    gap: 30px;
     flex-wrap: nowrap;
+
     position: sticky;
     top: 0;
+    left: 0;
     z-index: 1000;
-    background-color: #ffffff;
+
+    background: #ffffff;
 }
 
+/* LOGO */
 .logo {
     display: flex;
     align-items: center;
     gap: 12px;
-    flex-shrink: 0;
+
+    flex: 0 0 auto;
+    min-width: max-content;
     white-space: nowrap;
+
+    font-size: 1.2rem;
+    line-height: 1.3;
 }
 
-nav {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
+/* LOGO ICON */
+.logo-icon {
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
 }
 
-nav ul {
+/* NAVIGATION */
+header nav {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 30px;
+
+    flex: 0 1 auto;
+    min-width: 0;
+    margin-left: auto;
+}
+
+header nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+
+    gap: 24px;
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-nav ul li {
-    flex-shrink: 0;
+header nav ul li {
+    flex: 0 0 auto;
 }
 
-nav ul li a {
+header nav ul li a {
     display: inline-block;
-    padding: 8px 0;
     white-space: nowrap;
-    text-decoration: none;
-    cursor: pointer;
+
+    font-size: 0.95rem;
+    padding: 8px 0;
 }
 
-/* =========================================
-   CLICKABLE NAVIGATION AND FOOTER LINKS
-   ========================================= */
-
-header a,
-nav a,
-footer a,
-.logo {
-    pointer-events: auto;
-    cursor: pointer;
+/* HOMEPAGE HERO */
+.hero-home {
     position: relative;
-}
-
-/* =========================================
-   RESPONSIVE HEADER
-   ========================================= */
-
-@media (max-width: 900px) {
-    header {
-        padding: 15px 25px;
-        gap: 20px;
-    }
-
-    nav ul {
-        gap: 15px;
-    }
-}
-
-@media (max-width: 600px) {
-    header {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    nav {
-        margin: 0;
-        width: 100%;
-        justify-content: center;
-    }
-
-    nav ul {
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 12px 20px;
-    }
-}
-/* =========================================
-   HEADER AND NAVIGATION FIX
-   ========================================= */
-
-header {
     width: 100%;
-    min-height: 75px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 50px;
-    gap: 40px;
-    flex-wrap: nowrap;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background-color: #ffffff;
-}
+    min-height: 600px;
+    height: 80vh;
 
-.logo {
     display: flex;
     align-items: center;
-    gap: 12px;
-    flex-shrink: 0;
-    white-space: nowrap;
+
+    padding: 60px 7%;
+    overflow: visible;
 }
 
-nav {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-}
-
-nav ul {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 30px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    flex-shrink: 0;
-}
-
-nav ul li a {
-    display: inline-block;
-    padding: 8px 0;
-    white-space: nowrap;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* =========================================
-   CLICKABLE NAVIGATION AND FOOTER LINKS
-   ========================================= */
-
-header a,
-nav a,
-footer a,
-.logo {
-    pointer-events: auto;
-    cursor: pointer;
-    position: relative;
-}
-
-/* =========================================
-   RESPONSIVE HEADER
-   ========================================= */
-
-@media (max-width: 900px) {
-    header {
-        padding: 15px 25px;
-        gap: 20px;
-    }
-
-    nav ul {
-        gap: 15px;
-    }
-}
-
-@media (max-width: 600px) {
-    header {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    nav {
-        margin: 0;
-        width: 100%;
-        justify-content: center;
-    }
-
-    nav ul {
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 12px 20px;
-    }
-}
-/* =========================================
-   HEADER AND NAVIGATION FIX
-   ========================================= */
-
-header {
+.hero-content {
     width: 100%;
-    min-height: 75px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 50px;
-    gap: 40px;
-    flex-wrap: nowrap;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background-color: #ffffff;
+    max-width: 750px;
+    min-width: 0;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-shrink: 0;
-    white-space: nowrap;
+/* MAIN ART CLASS 101 TITLE */
+.hero-title {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+
+    font-family: 'Allison', cursive;
+    font-size: clamp(4.5rem, 9vw, 8rem);
+    line-height: 1.05;
+
+    white-space: normal;
+    overflow-wrap: normal;
+    word-break: normal;
+
+    margin-bottom: 25px;
 }
 
-nav {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
+/* HERO SUBTITLE */
+.hero-subtitle {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    line-height: 1.2;
 }
 
-nav ul {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 30px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+/* COURSE PAGE TITLES */
+.category-hero {
+    width: 100%;
+    min-height: 320px;
+    height: auto;
+    padding: 50px 20px;
+    overflow: visible;
 }
 
-nav ul li {
-    flex-shrink: 0;
+.category-hero-title {
+    width: 100%;
+    font-family: 'Allison', cursive;
+    font-size: clamp(4rem, 10vw, 9rem);
+    line-height: 1.1;
+
+    white-space: normal;
+    overflow-wrap: break-word;
 }
 
-nav ul li a {
-    display: inline-block;
-    padding: 8px 0;
-    white-space: nowrap;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* =========================================
-   CLICKABLE NAVIGATION AND FOOTER LINKS
-   ========================================= */
-
-header a,
-nav a,
-footer a,
-.logo {
-    pointer-events: auto;
-    cursor: pointer;
-    position: relative;
-}
-
-/* =========================================
-   RESPONSIVE HEADER
-   ========================================= */
-
+/* TABLET */
 @media (max-width: 900px) {
+
     header {
         padding: 15px 25px;
         gap: 20px;
     }
 
-    nav ul {
-        gap: 15px;
+    header nav ul {
+        gap: 14px;
+    }
+
+    header nav ul li a {
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+    }
+
+    .logo {
+        font-size: 1rem;
     }
 }
 
+/* MOBILE */
 @media (max-width: 600px) {
+
     header {
+        position: sticky;
         flex-direction: column;
-        gap: 15px;
+        align-items: center;
+        justify-content: center;
+
+        padding: 15px 12px;
+        gap: 12px;
     }
 
-    nav {
-        margin: 0;
+    .logo {
+        justify-content: center;
+        font-size: 1.1rem;
+    }
+
+    header nav {
         width: 100%;
         justify-content: center;
+        margin: 0;
     }
 
-    nav ul {
+    header nav ul {
+        width: 100%;
         justify-content: center;
         flex-wrap: wrap;
-        gap: 12px 20px;
+        gap: 8px 16px;
+    }
+
+    header nav ul li a {
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+    }
+
+    .hero-home {
+        min-height: 480px;
+        height: auto;
+        padding: 60px 25px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-title {
+        font-size: clamp(4rem, 16vw, 6rem);
+        line-height: 1.05;
+    }
+
+    .hero-subtitle {
+        font-size: 1.6rem;
+    }
+
+    .category-hero {
+        min-height: 250px;
+        padding: 40px 15px;
+    }
+
+    .category-hero-title {
+        font-size: clamp(3.5rem, 15vw, 5.5rem);
     }
 }
-/* =========================================
-   FIX LOGO AND NAVIGATION SPACING
-   ========================================= */
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 50px;
-    gap: 60px;
+/* PREVENT HORIZONTAL OVERFLOW */
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
+/* KEEP LOGO AND NAVIGATION CLICKABLE */
+header a,
+header button,
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-shrink: 0;
-    margin-right: auto;
-    white-space: nowrap;
+    cursor: pointer;
+    pointer-events: auto;
 }
 
-nav {
-    flex-shrink: 0;
-    margin-left: 40px;
-}
-
-nav ul {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    white-space: nowrap;
-}
-
-/* Prevent logo text from being squeezed */
-.logo span {
-    white-space: nowrap;
-    display: inline-block;
-}
