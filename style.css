@@ -864,3 +864,92 @@ header button,
     pointer-events: auto;
 }
 
+/* =====================================================
+   ART CLASS 101 - HEADER ALIGNMENT FIX
+   ===================================================== */
+
+/* Main Header */
+header {
+    width: 100%;
+    min-height: 80px;
+    height: auto;
+    padding: 0;
+    margin: 0;
+
+    display: block;
+
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    background-color: #ffffff;
+}
+
+/* Header Inner Container */
+header > div:first-child {
+    width: 100%;
+    max-width: 1280px;
+    height: 80px;
+    min-height: 80px;
+
+    margin: 0 auto;
+    padding: 0 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    box-sizing: border-box;
+}
+
+/* Logo */
+header > div:first-child > button:first-child {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+/* Logo Image */
+header > div:first-child > button:first-child img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+/* Navigation */
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+/* Navigation Links */
+header nav button {
+    white-space: nowrap;
+}
+
+/* Mobile Header */
+@media (max-width: 767px) {
+
+    header > div:first-child {
+        height: 75px;
+        min-height: 75px;
+        padding: 0 16px;
+    }
+
+    header nav {
+        display: none;
+    }
+
+    #mobile-menu-btn {
+        display: block;
+    }
+}
+
